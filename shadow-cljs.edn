@@ -1,4 +1,11 @@
-{:deps {:aliases [:dev :test]}
+{:deps   {:aliases [:dev :test]}
  :builds {:script {:target    :node-script
                    :main      cursive-shadow-cljs.core/-main
-                   :output-to "lib/script.js"}}}
+                   :output-to "lib/script.js"
+                   :devtools {:preloads [cursive-shadow-cljs.preload]
+                              :after-load cursive-shadow-cljs.preload/after-load!}}
+
+          :test {:target    :node-test
+                 :output-to "lib/tests.js"
+                 :autorun   true
+                 :devtools  {:preloads [cursive-shadow-cljs.test-preload]}}}}

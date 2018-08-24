@@ -2,6 +2,8 @@
   "name": "cursive-shadow-cljs.",
   "version": "0.0.0",
   "scripts": {
+    "test": "shadow-cljs release test && node lib/tests.js",
+    "test:watch": "shadow-cljs watch test",
     "build:watch": "shadow-cljs watch script",
     "build": "shadow-cljs release script"
   },
